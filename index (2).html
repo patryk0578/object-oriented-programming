@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer E-Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+  <header class="bg-gray-800 text-white p-6 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">My E-Portfolio</h1>
+      <button id="toggleTheme" class="bg-gray-700 px-4 py-2 rounded hover:bg-gray-600">Toggle Theme</button>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-8 space-y-16">
+    <section class="text-center">
+      <h2 class="text-3xl font-semibold">Developer Portfolio</h2>
+      <p class="text-lg mt-2">Object-Oriented Programming & Information Systems Module</p>
+    </section>
+
+    <!-- Unit Artefacts Section -->
+    <section id="units">
+      <h3 class="text-2xl font-semibold mb-4">Module Units</h3>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+        <h4 class="text-xl font-bold mb-2">Unit 2: Employee Leave System (Encapsulation)</h4>
+        <p>This artefact demonstrates basic class creation, instance variables, and encapsulation through a simple CLI-based system for managing employee annual leave requests.</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+        <h4 class="text-xl font-bold mb-2">Unit 5: Polymorphism and Abstract Classes</h4>
+        <p>This task focused on extending class hierarchies and demonstrating polymorphism through a simulation involving inheritance and abstract base classes.</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+        <h4 class="text-xl font-bold mb-2">Unit 7: Data Structures in Practice</h4>
+        <p>Created a Car class that uses a nested dictionary to store car data and demonstrated the use of <code>items()</code>, <code>keys()</code>, and <code>values()</code> methods.</p>
+      </div>
+    </section>
+
+    <!-- Assignments Section -->
+    <section id="assignments">
+      <h3 class="text-2xl font-semibold mb-4">Module Assignments</h3>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow mb-6">
+        <h4 class="text-xl font-bold mb-2">Assignment: System Design for Humanoid Robot Operations</h4>
+        <p>This assignment involved the design of a Python-based object-oriented system to simulate a humanoid robot. It included UML diagrams (class, activity, sequence, state), and the use of stacks, queues, and lists for simulation logic.</p>
+        <p><strong>Reflection:</strong> Helped me develop system-level thinking and understand how to translate requirements into design components.</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow mb-6">
+        <h4 class="text-xl font-bold mb-2">Assignment: Implementation of the Humanoid Robot System</h4>
+        <p>This implementation translated the system design into working Python code. It included a modular robot class, a CLI in <code>main.py</code>, and a test suite in <code>test_robot.py</code>.</p>
+        <p><strong>Reflection:</strong> Strengthened my understanding of modularity, CLI design, and test-driven development. It was a rewarding end-to-end development challenge.</p>
+      </div>
+    </section>
+
+    <!-- Final Project Evaluation -->
+    <section id="evaluation">
+      <h3 class="text-2xl font-semibold mb-4">Final Project Evaluation</h3>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+        <p>The final project was a Python simulation system for a humanoid robot. Its modular structure enabled realistic command execution and feedback through a CLI. I used unit testing and separation of concerns to ensure quality and maintainability.</p>
+        <p>Challenges included time constraints and simplifying some originally planned features. However, I gained deep insight into planning, coding, and testing in real-world-style projects.</p>
+      </div>
+    </section>
+
+    <!-- Reflection Section -->
+    <section id="reflection">
+      <h3 class="text-2xl font-semibold mb-4">Reflection</h3>
+      <details class="bg-gray-100 dark:bg-gray-700 p-6 rounded">
+        <summary class="cursor-pointer font-medium">Click to view Reflection</summary>
+        <p class="mt-4">The full 1,000-word reflection has been submitted as a separate document as per the assignment instructions. This section was informed by key learning across Units 2, 5, and 7, project development, and challenges encountered during portfolio creation.</p>
+      </details>
+    </section>
+
+    <!-- Technical Reflection Note -->
+    <!--
+      REFLECTIVE NOTE:
+      During the development of my e-portfolio, I encountered a technical challenge while trying to structure and place
+      a new artefact within the portfolio layout. Despite several attempts, the formatting and placement kept causing issues,
+      and I had to decide whether to keep pushing for a fix or take another approach.
+
+      This became a valuable moment of reflection. Instead of seeing it as a failure, I recognised it as a reminder that
+      technical work often involves knowing when to adapt. I learned to evaluate the effort-to-impact ratio and chose
+      to reflect on the experience instead of forcing a solution that added little overall value.
+
+      It reminded me that in real-world development, not every issue needs to be solved immediately — sometimes it's better
+      to document it, learn from it, and move forward with clarity and focus.
+    -->
+
+  </main>
+
+  <footer class="bg-gray-800 text-center text-white py-4">
+    <p>&copy; 2025 | Patryk</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("toggleTheme");
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+    });
+  </script>
+</body>
+</html>
