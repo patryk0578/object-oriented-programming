@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer E-Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+  <header class="bg-gray-800 text-white p-6 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">My E-Portfolio</h1>
+      <button id="toggleTheme" class="bg-gray-700 px-4 py-2 rounded hover:bg-gray-600">Toggle Theme</button>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-8 space-y-16">
+    <section class="text-center">
+      <h2 class="text-3xl font-semibold">Developer Portfolio</h2>
+      <p class="text-lg mt-2">Object-Oriented Programming & Information Systems Module</p>
+    </section>
+<section id="units">
+  <h3 class="text-2xl font-semibold mb-4">Module Units</h3>
+
+  <!-- Unit 2 Artefact -->
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow mb-6">
+    <h4 class="text-xl font-bold mb-2">Unit 2: Employee Leave System</h4>
+    <p class="mb-4">This Python program retains employee details and allows them to book annual leave using a CLI interface. It explores encapsulation and use of protected vs unprotected variables.</p>
+    <pre class="bg-gray-100 dark:bg-gray-700 p-4 rounded overflow-x-auto text-sm">
+<code>class Employee:
+    def __init__(self, name, leave_days):
+        self.name = name
+        self._leave_days = leave_days  # protected variable
+
+    def request_leave(self, days):
+        if days <= self._leave_days:
+            self._leave_days -= days
+            return f"Leave approved. {self._leave_days} days remaining."
+        return "Leave request denied."
+
+emp = Employee("John", 20)
+print(emp.request_leave(5))</code>
+    </pre>
+  </div>
+
+  <!-- Unit 5 Artefact -->
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow mb-6">
+    <h4 class="text-xl font-bold mb-2">Unit 5: Polymorphism and Abstract Classes</h4>
+    <p class="mb-4">This task involved using abstract base classes and method overriding to create a flexible simulation of multiple robot types.</p>
+    <pre class="bg-gray-100 dark:bg-gray-700 p-4 rounded overflow-x-auto text-sm">
+<code>from abc import ABC, abstractmethod
+
+class Robot(ABC):
+    @abstractmethod
+    def perform_task(self):
+        pass
+
+class DeliveryRobot(Robot):
+    def perform_task(self):
+        return "Delivering package..."
+
+class CleaningRobot(Robot):
+    def perform_task(self):
+        return "Cleaning floor..."
+
+robots = [DeliveryRobot(), CleaningRobot()]
+for r in robots:
+    print(r.perform_task())</code>
+    </pre>
+  </div>
+
+  <!-- Unit 7 Artefact -->
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow mb-6">
+    <h4 class="text-xl font-bold mb-2">Unit 7: Data Structures and Search</h4>
+    <p class="mb-4">A nested dictionary of cars is stored in a Car class, and various dictionary methods are used to manipulate and display data.</p>
+    <pre class="bg-gray-100 dark:bg-gray-700 p-4 rounded overflow-x-auto text-sm">
+<code>class Car:
+    def __init__(self):
+        self.data = {
+            "Toyota": {"year": 2020, "electric": False},
+            "Tesla": {"year": 2022, "electric": True}
+        }
+
+    def show_items(self):
+        return self.data.items()
+
+    def show_keys(self):
+        return self.data.keys()
+
+    def show_values(self):
+        return self.data.values()
+
+car = Car()
+print(list(car.show_items()))
+print(list(car.show_keys()))
+print(list(car.show_values()))</code>
+    </pre>
+  </div>
+</section>
+<!-- Assignments Section -->
+<section id="assignments">
+  <h3 class="text-2xl font-semibold mb-4">Module Assignments</h3>
+
+  <!-- Assignment 1: System Design -->
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow mb-6">
+    <h4 class="text-xl font-bold mb-2">Assignment: System Design for Humanoid Robot Operations</h4>
+    <p class="mb-4">
+      This assignment required a formal system design for a humanoid robot capable of executing three core operations:
+      Navigation, Object Manipulation, and Human Interaction. The design included UML diagrams (Class, Activity, Sequence,
+      and State Transition) and demonstrated the use of data structures (list, stack, queue) to simulate environmental interactions.
+    </p>
+    <p class="mb-4">
+      <strong>Reflection:</strong> This task deepened my understanding of designing scalable, maintainable systems.
+      Using UML forced me to visualise component responsibilities and interactions before implementation,
+      which ultimately helped streamline the later stages of development.
+    </p>
+  </div>
+
+  <!-- Assignment 2: Implementation -->
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow mb-6">
+    <h4 class="text-xl font-bold mb-2">Assignment: Implementation of the Humanoid Robot System</h4>
+    <p class="mb-4">
+      Building on the design from Assignment 1, this Python implementation included a command-line interface (`main.py`),
+      modular logic (`robot.py`), and unit tests (`test_robot.py`). The robot class handled basic commands like start,
+      stop, move, and interact with users and its environment. It simulated command stacking, battery level, and internal state.
+    </p>
+    <pre class="bg-gray-100 dark:bg-gray-700 p-4 rounded overflow-x-auto text-sm mb-4">
+<code>class HumanoidRobot:
+    def __init__(self, name):
+        self.name = name
+        self.active = False
+        self.battery = 100
+
+    def start(self):
+        if not self.active:
+            self.active = True
+            return f"{self.name} is now active."
+        return f"{self.name} is already active."
+
+    def charge(self):
+        self.battery = 100
+        return "Battery fully charged."
+
+robot = HumanoidRobot("HAL-9000")
+print(robot.start())
+print(robot.charge())</code>
+    </pre>
+    <p>
+      <strong>Reflection:</strong> This final build tested everything I’d learned in the module — from object-oriented structure
+      and CLI design to code documentation and unit testing. It reinforced the importance of clean architecture and flexible code.
+    </p>
+  </div>
+</section>
+<!-- Final Project Evaluation Section -->
+<section id="evaluation">
+  <h3 class="text-2xl font-semibold mb-4">Final Project Evaluation</h3>
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+    <p class="mb-4">
+      The final project brought together all the elements explored throughout the module. I developed a modular Python system
+      simulating a humanoid robot that could respond to commands via a command-line interface. The project included error handling,
+      runtime state management, and a strong focus on usability and maintainability.
+    </p>
+    <p class="mb-4">
+      I applied design patterns, abstraction principles, and OOP concepts like encapsulation and polymorphism. The modular structure
+      made testing and debugging significantly easier, and my implementation of unit tests ensured robust code.
+    </p>
+    <p class="mb-4">
+      One challenge was balancing complexity with deliverability. Some advanced features had to be scaled back, such as real-time
+      command logging and automated environment simulation. Still, this provided a valuable lesson in prioritising features and
+      understanding project scope.
+    </p>
+    <p>
+      Overall, this project helped me build confidence in designing, implementing, and evaluating software systems from scratch.
+      It was the most rewarding part of the module and reinforced the value of thoughtful architecture and clean coding practices.
+    </p>
+  </div>
+</section>
+
+<!-- Reflection Section -->
+<section id="reflection">
+  <h3 class="text-2xl font-semibold mb-4">Reflection</h3>
+  <details class="bg-gray-100 dark:bg-gray-700 p-6 rounded">
+    <summary class="cursor-pointer font-medium">Click to view Reflection Summary</summary>
+    <p class="mt-4">
+      A full 1,000-word reflection was submitted separately, as required. It discusses my learning progression, design and development journey,
+      technical challenges, and how this module has shaped my professional and academic confidence.
+    </p>
+  </details>
+</section>
+
+<!-- Reflection Comment on Technical Hiccup -->
+<!--
+  REFLECTIVE NOTE:
+  At one point, I attempted to automate artefact insertion into this portfolio layout but encountered HTML structure issues
+  that disrupted the presentation. Rather than continue forcing a solution, I chose to pause, reflect, and revise my approach.
+  This became a key moment of learning: not every obstacle is best solved head-on. Sometimes clarity comes from stepping back
+  and reevaluating the goal. This moment helped me grow both technically and professionally.
+-->
+</main>
+
+<footer class="bg-gray-800 text-center text-white py-4">
+  <p>&copy; 2025 | Patryk</p>
+</footer>
+
+<script>
+  const toggle = document.getElementById("toggleTheme");
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+  });
+</script>
+
+</body>
+</html>
